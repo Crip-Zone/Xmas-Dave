@@ -1,13 +1,13 @@
 /* You can find detailed information at https://wiki.simplemachines.org/smf/Curve2_CSS
 /* Index */
 html {
-	background: #0588bc;
+	background: #f1f1f1;
 	scroll-padding-top: 3rem;
 }
 body {
-	background: #0588bc url(../images/id/b_grd.png) repeat-x;
+	background: url(../images/id/b_grd.png);
 	font: 78%/130% "Verdana", "Arial", "Helvetica", sans-serif;
-	color: #1686d9;
+	color: #0D6700;
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
@@ -36,20 +36,23 @@ table {
 abbr {
 	border-bottom: 0.1em dotted;
 }
-input, button, select, textarea {
+input, select, textarea {
 	color: #222;
 	font: 83.33%/150% "Segoe UI", "Helvetica Neue", "Nimbus Sans L", Arial, "Liberation Sans", sans-serif;
 	background: #fff;
 	outline: none;
-	border: 1px solid #bbb;
+	border: 1px solid #0d6700;
 	vertical-align: middle;
 	border-radius: 3px;
 	box-shadow: 1px 2px 1px rgba(160, 187, 221, 0.2) inset;
 	padding: 0.3em 0.4em;
 }
+a.button, a.button:visited {
+	color: #fff;
+}
 input:hover, textarea:hover, button:hover, select:hover {
 	outline: none;
-	border-color: #82a2bc;
+	border-color: #0d6700;;
 }
 textarea:hover {
 	background: #fbfbfb;
@@ -80,8 +83,12 @@ input[type="submit"]::-moz-focus-inner, button::-moz-focus-inner {
 	border: 0;
 }
 /* Prevent inputs and images overflowing */
-img, input, select, textarea {
+img, input, select{
 	max-width: 100%;
+}
+textarea {
+	max-width: 100%;
+	border: 1px solid #0d6700;
 }
 /* This is a specific issue on Ubuntu - Chrome */
 #chrome input {
@@ -90,6 +97,7 @@ img, input, select, textarea {
 /* The following is necessary */
 textarea {
 	font-size: 1em;
+	border: 1px solid #0d6700;
 }
 
 /* Use a consistent monospace font everywhere */
@@ -134,7 +142,7 @@ select option {
 fieldset {
 	padding: 18px;
 	margin: 0 0 6px 0;
-	border: 1px solid #ddd;
+	border: 1px solid #406d27;
 	border-radius: 3px;
 }
 fieldset legend {
@@ -172,6 +180,7 @@ input[type="checkbox"], input[type="radio"] {
 	vertical-align: middle;
 	box-shadow: none;
 	margin: 0 3px;
+	accent-color: #406d27;
 }
 .moderationbuttons_mobile_check {
 	display: none;
@@ -186,14 +195,14 @@ input[disabled], textarea[disabled], select[disabled], .button.disabled, .button
 }
 /* Standard horizontal rule.. ([hr], etc.) */
 hr {
-	border: none;
+	border: 1px solid #0d6700;
 	margin: 12px 0;
 	height: 1px;
 	background: #000;
 }
 /* This is about links */
 a, a:visited {
-	color: #346;
+	color: #000;
 	text-decoration: none;
 }
 a:hover {
@@ -464,7 +473,7 @@ a img {
 	overflow: hidden;
 	content: "";
 	vertical-align: middle;
-/*	margin: 0 5px 0 5px; */
+	margin: 0 0 5px;
 	border: 1px solid #c5c5c5;
 	border-radius: 3px;
 	box-shadow: 0 1px 2px rgba(0, 0, 0, .2),
@@ -560,7 +569,7 @@ strong[id^='child_list_']::after {
 }
 
 .holiday > span {
-	color: #025dff;
+	color: #444;
 }
 /* Events that are currently selected on the calendar. Won't see it much, probably. */
 .sel_event {
@@ -592,7 +601,7 @@ a.moderation_link, a.moderation_link:visited {
 	width: 100%;
 	line-height: 25px;
 	position: fixed;
-	top: 30px;
+	top: 0;
 	left: 0;
 }
 
@@ -725,10 +734,10 @@ img.sort, .sort {
 ------------------------------------------------------- */
 #top_info {
 	position: relative;
-	background: linear-gradient(to bottom, #fefefe 0, #dedede 50%);
 	height: 34px;
+/*	background: linear-gradient(to bottom, #fefefe 0, #dedede 50%);
 	border-top: #c6c6c6;
-	border-bottom: #969696;
+	border-bottom: #969696; */
 }
 .dropmenu {
 	position: relative;
@@ -746,6 +755,12 @@ img.sort, .sort {
 	font-weight: bolder;
 	background: transparent;
 }
+#top_info > li, #top_info > li strong {
+	color: #000;
+}
+#top_info .welcome, #top_info .welcome strong {
+	color: #fff;
+}
 /* Disable default focus outlines */
 .dropmenu a {
 	outline: 0;
@@ -755,12 +770,19 @@ img.sort, .sort {
 	margin-left: 3px;
 	padding: 0 5px;
 	color: #fff;
-	background: #6d90ad;
+	background: #c22d01;
+	border-radius: 8px;
+}
+.amt:hover {
+	margin-left: 3px;
+	padding: 0 5px;
+	color: #c22d01;
+	background: #fff;
 	border-radius: 8px;
 }
 .dropmenu li .active .amt {
 	background: #ddd;
-	color: #3763b8;
+	color: #c22d01;
 }
 #top_info li .active .amt {
 	background: rgba(0, 0, 0, 0.2);
@@ -777,8 +799,11 @@ img.sort, .sort {
 #top_info > li > a {
 	padding: 0 7px 0 7px;
 	display: block;
-	border: 1px solid transparent;
+/*	border: 2px solid #0B5600; */
 	border-radius: 4px;
+	color: #fff;
+	background: linear-gradient(to bottom, #629f2f 0, #234221 50%);
+	margin-top: 2px;
 }
 .dropmenu li a {
 	padding: 0 7px 0 7px;
@@ -787,20 +812,23 @@ img.sort, .sort {
 	border-radius: 4px;
 	margin: 6px -6px 0 0;
 	outline: none;
+	color: #0D6700;
 }
 /* Level 1 active button. */
-/* .dropmenu a.active, #top_info a.active {
+.dropmenu a.active {
 	color: #fff;
 	font-weight: bold;
-	border: 1px solid #efefef;
-	background: linear-gradient(to bottom, #4e91e9 0, #3763b8 50%);
-	text-shadow: 0 0 2px #000;
-} */
-.dropmenu li a.active, #top_info a.active {
+	border: 1px solid #c22d01;
+	background: linear-gradient(to bottom, #7D1E02 0, #C22D01 50%);
+/*	text-shadow: 0 0 2px #000; */
+}
+#top_info a.active {
 	color: #fff;
 	font-weight: bold;
-	background: linear-gradient(to bottom, #4e91e9 0, #3763b8 50%);
-	border: 1px solid #efefef;
+	border: 2px solid #0B5600;
+	background: linear-gradient(to bottom, #629f2f 0, #234221 50%);
+	text-decoration: underline;
+/*	text-shadow: 0 0 2px #000; */
 }
 /* Level 1 hover effects. */
 .dropmenu li a:hover  {
@@ -809,32 +837,41 @@ img.sort, .sort {
 	color: #fff;
 	cursor: pointer;
 	text-decoration: none;
-	box-shadow: 0 4px 4px rgba(255, 255, 255, 0.1) inset;
-	text-shadow: none;
+/*	box-shadow: 0 4px 4px rgba(255, 255, 255, 0.1) inset;
+	text-shadow: none; */
 }
 
 .dropmenu li:hover a{
-	background: #1686d2;
-	border: 1px solid #1686d2;
+	background: #C22D01;
+	border: 1px solid #C22D01;
 	color: #fff;
 	cursor: pointer;
 	text-decoration: none;
-	box-shadow: 0 4px 4px rgba(255, 255, 255, 0.1) inset;
+/*	box-shadow: 0 4px 4px rgba(255, 255, 255, 0.1) inset;
 	text-shadow: none;
 }
-.dropmenu li a:focus, #top_info > li > a:hover, #top_info > li:hover > a, #top_info > li > a.open {
-	background: #1686d2;
-	border: 1px solid #1686d2;
+#top_info > li > a:hover, #top_info > li:hover > a, #top_info > li > a.open {
+	background: linear-gradient(to bottom, #629f2f 0, #234221 50%);
+	border: 2px solid #0B5600;
 	color: #fff;
 	cursor: pointer;
 	text-decoration: none;
-	box-shadow: 0 4px 4px rgba(255, 255, 255, 0.1) inset;
-	text-shadow: none;
+/*	box-shadow: 0 4px 4px rgba(255, 255, 255, 0.1) inset;
+	text-shadow: none; */
+}
+.dropmenu li a:focus {
+	background: linear-gradient(to bottom, #7D1E02 0, #C22D01 50%);
+	border: 1px solid #C22D01;
+	color: #fff;
+	cursor: pointer;
+	text-decoration: none;
+/*	box-shadow: 0 4px 4px rgba(255, 255, 255, 0.1) inset;
+	text-shadow: none; */
 }
 /* Level 1 active button. */
 .dropmenu li a.active:hover, .dropmenu li:hover a.active {
-	background: #1686d2;
-/*	border: 1px solid #efefef; */
+	background: #C22D01;
+	border: 1px solid #C22D01;
 	color: #fff;
 /*	box-shadow: 0 5px 5px rgba(255, 255, 255, 0.2) inset; */
 	text-shadow: none;
@@ -871,7 +908,7 @@ a[class^="mobile_generic_menu_"] {
 	column-count: 2;
 }
 .profile_user_links li {
-	font-size: .8rem;
+	font-size: .7rem;
 	line-height: 2em;
 	padding-left: 24px;
 	text-indent: -24px;
@@ -1065,16 +1102,17 @@ a[class^="mobile_generic_menu_"] {
 .button, .inline_mod_check {
 	display: inline-block;
 	padding: 0 8px;
-	color: #444;
+	color: #fff;
 	font-size: 0.7rem;
 	line-height: 2em;
 	text-transform: uppercase;
 	cursor: pointer;
 	min-height: calc(2em + 2em * (0.9 - 0.85)); /* "input" font size minus ".button" font size */
-	border-radius: 3px;
+	border-radius: 6px;
 	box-sizing: border-box;
 	vertical-align: middle;
-	background: #eee;																				  
+	background: linear-gradient(to bottom, #629f2f 0, #234221 50%);		
+/*	border:	2px solid #0B5600; */
 }
 html[lang="el-GR"] .button,
 html[lang="el-GR"] .quickbuttons > li > a,
@@ -1082,18 +1120,18 @@ html[lang="el-GR"] .inline_mod_check {
 	text-transform: capitalize;
 }
 .pagesection .button {
-	color: #346;
+	color: #fff;
 }
 .button:hover, .button:focus, #search_form .button:hover {
-	background: #5b7fb1;
+	background: linear-gradient(to bottom, #f8ed9e 0, #a25c07 50%);
 	color: #fff;
 	text-decoration: none;
-	border-radius: 4px;
+	border-radius: 6px;
+/*	border:	2px solid #a25c07; */
 }	
 .quickbuttons > li > a {
 	display: inline-block;
 	padding: 0 8px;
-	color: #fff;
 	font-size: 0.7rem;
 	line-height: 2em;
 	text-transform: uppercase;
@@ -1102,39 +1140,43 @@ html[lang="el-GR"] .inline_mod_check {
 	border-radius: 0;
 	box-sizing: border-box;
 	vertical-align: middle;
+/*	border: 1px solid #0D6700; */
+	height: 25px;
 }
 .quickbuttons > li:first-child:hover > a, .quickbuttons > li:first-child:focus > a {
-	background: #5b7fb1;
-	color: #fff;
-	border: 1px solid #5b7fb1;
+/*	background: linear-gradient(to bottom, #f8ed9e 0, #a25c07 50%);
+	border: 1px solid #0D6700; */
 	border-radius: 4px 0 0 4px;
-	text-decoration: none;
+	text-decoration: underline;
 }
 .quickbuttons > li:last-child:hover > a, .quickbuttons > li:last-child:focus > a {
-	background: #5b7fb1;
+/*	background: linear-gradient(to bottom, #f8ed9e 0, #a25c07 50%); */
 	color: #fff;
 	border-radius: 0 4px 4px 0;
-	text-decoration: none;
-	height: 23px;
+	text-decoration: underline;
+/*	height: 23px; */
 }
 .quickbuttons > li:only-child:hover > a, .quickbuttons > li:only-child:focus > a {
-	background: #5b7fb1;
+	background: linear-gradient(to bottom, #f8ed9e 0, #a25c07 50%);
+/*	border: 1px solid #0D6700; */
 	color: #fff;
-	border: 1px solid #5b7fb1;
 	border-radius: 0;
-	text-decoration: none;
+	text-decoration: underline;
 }
 /* the active one */
 .button.active {
-	background: #00406d;
+	background: linear-gradient(to bottom, #629f2f 0, #234221 50%);
 	color: #fff;
 	font-weight: bold;
-	border: 1px solid #558080;
+/*	border: 2px solid #0D6700; */
+	text-decoration: underline;
 }
 .button.active:hover, .button.active:focus {
-	color: #ddf;
-	background: #00406d;
+	color: #fff;
+	background: linear-gradient(to bottom, #f8ed9e 0, #a25c07 50%);
 	box-shadow: none;
+/*	border: 2px solid #a25c07; */
+	font-weight: bold;
 }
 .cat_bar .button {
 	box-shadow: none;
@@ -1149,6 +1191,7 @@ html[lang="el-GR"] .inline_mod_check {
 }
 .buttonrow .button:first-child {
 	border-radius: 4px 0 0 4px;
+	color: #fff;
 }
 .buttonrow .button:last-child {
 	border-radius: 0 4px 4px 0;
@@ -1174,6 +1217,9 @@ html[lang="el-GR"] .inline_mod_check {
 	background: #fff;
 	border-bottom-right-radius: 20px;
 	border-bottom-left-radius: 20px;
+	border: 2px solid #0d6700;
+	border-bottom: none;
+	border-top: none;
 }
 
 /* Set maximum width limit for content */
@@ -1191,7 +1237,7 @@ html[lang="el-GR"] .inline_mod_check {
 #top_section {
 	border-top: #c6c6c6;
 	border-bottom: #969696;
-	background: linear-gradient(to bottom, #fefefe 0, #dedede 50%);
+	background: linear-gradient(to bottom, #7D1E02 0%, #C22D01 100%);
 	clear: both;
 }
 #top_section::after {
@@ -1234,11 +1280,7 @@ html[lang="el-GR"] .inline_mod_check {
 	position: relative;
 	overflow: hidden;
 	clear: both;
-	background: #fff;
-	background: #D5D6D5;
-	background: -moz-linear-gradient(top, #d5d4d4 0%, #efefef 18%, #fefefe 73%, #dfdfdf 100%);
-	background: -webkit-linear-gradient(top, #d5d4d4 0%,#efefef 18%,#fefefe 73%,#dfdfdf 100%);
-	background: linear-gradient(to bottom, #d5d4d4 0%,#efefef 18%,#fefefe 73%,#dfdfdf 100%);
+	background: url(../images/id/header.png) 50% 0 no-repeat;
     border-bottom: none;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
@@ -1251,6 +1293,9 @@ html[lang="el-GR"] .inline_mod_check {
 	align-items: flex-end;
 	max-width: 1200px;
 	margin: 25px auto 0 auto;
+	height: 255px;
+	border: 2px solid #0d6700;
+	border-bottom: none;
 }
 #header::after {
 	content: "";
@@ -1266,7 +1311,7 @@ h1.forumtitle {
 	flex: 1 1 auto;
 }
 h1.forumtitle a {
-	color: #19599f;
+	color: #0B5600;
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 /* Float these items to the right */
@@ -1303,7 +1348,7 @@ img#smflogo {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	border-bottom: 1px solid #bbb;
+	border-bottom: 1px solid #0d6700;
 	margin-bottom: 12px;
 	background: #fdfdfd;
 }
@@ -1418,30 +1463,28 @@ ul li.greeting {
 /* The footer with copyright links etc. */
 #footer {
     margin: 0px 0 25px 0;
-    padding: 19px 0 19px;
+    padding: 19px 0 19px 80px;
     height: auto;
-	background: #ececec;
-	background: -moz-linear-gradient(top, #ececec 0%, #ffffff 14%, #ffffff 85%, #e7e7e7 100%);
-	background: -webkit-linear-gradient(top, #ececec 0%,#ffffff 14%,#ffffff 85%,#e7e7e7 100%); 
-	background: linear-gradient(to bottom, #ececec 0%,#ffffff 14%,#ffffff 85%,#e7e7e7 100%); 
+	background: url(../images/id/footer.png); 
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ececec', endColorstr='#e7e7e7',GradientType=0 );
 	border-top-right-radius: 20px;
     border-top-left-radius: 20px;
 	border-bottom-left-radius: 20px;
 	border-bottom-right-radius: 20px;
-	border-top: 15px solid #10689C;
-    border-bottom: 15px solid #10689C;
+	border-top: 15px solid #C22D01;
+    border-bottom: 15px solid #C22D01;
 	flex: none;
 	width: auto;
 	align-self: center;
 }
-#footer li, #footer p, #footer a {
+#footer li, #footer p, #footer a, #footer .strong, #footer strong {
 	font-size: 0.9em;
-	color: #555;
+	color: #0B5600;
 }
 #footer li.copyright {
 	display: block;
 	font-family: Verdana, sans-serif; /* Copyright must be Verdana! */
+	color: #0B5600;
 }
 #footerfix {
 	/*flex: 1 0 auto;*/
@@ -1459,9 +1502,11 @@ ul li.greeting {
 	margin: 0;
 	padding: 0;
 }
+
 .fix_rtl_names {
 	display: inline-block;
 }
+
 /* The quick buttons */
 .quickbuttons {
 	margin: 0 0 5px;
@@ -1477,22 +1522,24 @@ ul li.greeting {
 }
 .quickbuttons > li > a, .inline_mod_check {
 	display: block;
-	height: auto;
 	padding: 0 4px;
-	color: #222;
+	color: #fff;
 	line-height: 1.375rem;
 	border-radius: 0;
+	background: linear-gradient(to bottom, #629f2f 0, #234221 50%);
 }
 .quickbuttons > li:first-child > a {
-	border-radius: 4px 0 0 4px;
+	border-radius: 6px 0 0 6px;
+	height: 25px;
 }
 .quickbuttons > li:last-child > a, .inline_mod_check:last-child {
-	border-radius: 0 4px 4px 0;
+	border-radius: 0 6px 6px 0;
+	height: 25px;
 }
 .quickbuttons > li:only-child > a, .inline_mod_check:only-child {
-	border-radius: 4px;
+	border-radius: 6px;
 	margin: 2px;
-	height: 23px;
+	height: 25px;
 }
 .inline_mod_check input {
 	position: relative;
@@ -1519,7 +1566,7 @@ ul li.greeting {
 	border: solid 1px #999;
 	border-left: solid 1px #aaa;
 	border-top: solid 1px #bbb;
-	border-radius: 4px 0 4px 4px;
+	border-radius: 6px 0 6px 6px;
 	box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.2);
 }
 .post_options:hover ul {
@@ -1532,7 +1579,7 @@ ul li.greeting {
 	line-height: 2.2em;
 	text-decoration: none;
 	border: 1px solid transparent;
-	border-radius: 3px;
+	border-radius: 6px;
 }
 .post_options ul a:hover, .post_options ul a:focus {
 	border-color: #c4cbd3;
@@ -2310,6 +2357,7 @@ tr.windowbg td, tr.bg td, .table_grid tr td {
 	text-shadow: 1px 1px rgba(255, 255, 255, .4);
 	display: inline-block;
 	padding: 0 5px;
+	color: #000;
 }
 .generic_bar .bar, .progress_bar .bar {
 	position: absolute;
@@ -2317,7 +2365,7 @@ tr.windowbg td, tr.bg td, .table_grid tr td {
 	top: 0;
 	left: 0;
 	bottom: 0;
-	background: #258bcd;
+	background: linear-gradient(to bottom, #7dc342 0, #1f581b 70%);
 	transition: width .3s;
 	border-radius: 1px;
 	box-shadow: 4px -4px 8px rgba(0, 0, 0, 0.1) inset,
@@ -2656,8 +2704,8 @@ dl {
 ------------------------------------------------- */
 #statistics .roundframe {
 	margin: 0;
-	border-top-left-radius: 0;
-	border-top-right-radius: 0;
+	border-radius: 6px;
+	border: 2px solid #c22d01;
 }
 dl.stats dt {
 	width: 50%;
@@ -2670,6 +2718,9 @@ dl.stats dt {
 	word-wrap: break-word; /* IE fallback */
 	overflow-wrap: break-word;
 }
+dl.stats dt a {
+	color: #0D6700;
+}
 dl.stats dd {
 	width: 48%;
 	font-size: 1em;
@@ -2678,6 +2729,8 @@ dl.stats dd {
 }
 dl.stats {
 	padding: 5px;
+	border: 1px solid #0d6700;
+	margin-bottom: 5px;
 }
 
 /* Forum history table. */
@@ -2685,7 +2738,7 @@ dl.stats {
 	width: 15%;
 	padding: 4px;
 	text-align: center;
-	color: #444;
+	color: #0D6700;
 }
 #stats tr.windowbg th.lefttext {
 	text-align: left;
@@ -2836,9 +2889,10 @@ dl.addrules dt.floatleft {
 	border: none;
 }
 #searchform .roundframe {
-	border-radius: 0;
+	border-radius: 6px;
 	margin: 0;
 	padding: 32px;
+	border: 2px solid #0d6700;
 }
 #searchform .alt {
 	border-top: 0;
@@ -2955,12 +3009,12 @@ dl.addrules dt.floatleft {
 	padding: 0 6px 6px 6px;
 	border: 1px solid #1b1b1b;
 	text-decoration: none;
-	background: #1686d9;
+	background: #457528;
 }
 .popup_heading {
 	padding: 10px 8px;
 	color: #fff;
-	background: #1686d9;
+	background: #457528;
 }
 .popup_content {
 	color: #222;
@@ -2999,7 +3053,7 @@ dl.addrules dt.floatleft {
 	background: #f0f4f7;
 	margin: 12px 0 0 0;
 	padding: 12px 16px;
-	border: 1px solid #ddd;
+	border: 1px solid #0d6700;
 	border-radius: 6px;
 	box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.1);
 	overflow: auto;
@@ -3165,7 +3219,7 @@ h3 .collapse {
 .info .subject {
 	font-weight: 600;
 	font-size: 1.1em;
-	color: #19599F;
+	color: #0B5600;
 }
 .board_stats {
 	width: 15%;
@@ -3209,7 +3263,7 @@ h3 .collapse {
 	font-size: 0.9em;
 }
 .children strong {
-	color: #19599F;
+	color: #0D6700;
 }
 .children span::after {
 	content: ", ";
@@ -3306,14 +3360,14 @@ span.postby {
 #topic_header {
 	display: flex;
 	color: #fff;
-	border-top: 2px solid #67d1ff;
-	border-left: 2px solid #67d1ff;
-	border-right: 2px solid #67d1ff;
+	border-top: 2px solid #7D1E02;
+	border-left: 2px solid #7D1E02;
+	border-right: 2px solid #7D1E02;
 	padding: 2px;
 	border-top-left-radius: 6px;
 	border-top-right-radius: 6px;
-	box-shadow: 0px 0px 0px 1px #116ba1;
-	background: linear-gradient(to bottom, #3ba4e9 10%, #0b66a2 90%);
+	box-shadow: 0px 0px 0px 1px #7D1E02;
+	background: linear-gradient(to bottom, #7D1E02 0%, #C22D01 100%);
 	margin: 5px 1px 0 1px;
 	overflow: hidden;
 }
@@ -3338,7 +3392,7 @@ span.postby {
 	padding: 0;
 	margin: 0;
 	overflow: hidden;
-	background: #f5f5f0;
+	background: linear-gradient(to bottom, #fff 0%, #f1f3f5 95%);
 }
 #topic_container .lastpost, #topic_header .lastpost {
 	width: 20%;
@@ -3628,8 +3682,9 @@ img.smiley {
 	display: none;
 }
 /* Next and previous topic links */
-.nextlinks {
+.nextlinks a {
 	text-transform: capitalize;
+	color: #c22d01;
 }
 /* Styles for the quick reply area. */
 #quickreply {
@@ -3638,8 +3693,6 @@ img.smiley {
 #quickreply_options .roundframe {
 	margin: 0;
 	padding: 8px 10% 12px 10%;
-	border-top-left-radius: 0;
-	border-top-right-radius: 0;
 }
 #quickReplyExpand {
 	float: right;
@@ -3831,11 +3884,9 @@ ul.post_options li {
 /* General Classes */
 /* Cat_bar / catbg */
 div.cat_bar {
-	background: linear-gradient(to bottom, #3DA6EB 0%, #0B65A1 100%);
-	border: 2px solid #67d1ff;
+	background: linear-gradient(to bottom, #7D1E02 0%, #C22D01 100%);
 	padding: 0;
 	border-radius: 6px;
-	box-shadow: 0px 0px 0px 2px #116ba1;
 	margin-top: 2px;
 	margin-bottom: 5px;
 	margin-left: 2px;
@@ -3851,7 +3902,7 @@ h3.catbg .cat_bar {
 	border-radius: 6px;
 }
 .cat_bar h3 {
-	padding: 3px 12px 6px 12px;
+	padding: 9px 12px 6px 12px;
 }
 /* Styles for rounded headers. */
 .cat_bar .desc {
@@ -3859,7 +3910,8 @@ h3.catbg .cat_bar {
 	font-size: 12px;
 	line-height: 1.5em;
 	font-weight: normal;
-	margin: -8px 0 4px 12px;
+	margin: -12px 0 4px 12px;
+	padding-bottom: 5px;
 }
 .cat_bar .desc a {
 	color: #fff;
@@ -3869,13 +3921,14 @@ h3.catbg {
 	overflow: hidden;
 	font-size: 1.1em;
 	font-family: "Tahoma", sans-serif;
-/*	height: 25px; */
+	height:35px;
 }
 h3.catbg a {
 	overflow: hidden;
 	font-size: 1.1em;
 	font-family: "Tahoma", sans-serif;
-	height: auto;
+	vertical-align: middle;
+	padding-bottom: 10px;
 }
 h3.catbg, h3.catbg a, h3.catbg a:hover {
 	color: #fff;
@@ -3889,8 +3942,8 @@ h3.catbg .main_icons::before, h3.catbg .icon {
 }
 .cat_bar + .windowbg, .cat_bar + .roundframe {
 	margin-top: -1px;
-	border-top-left-radius: 0;
-	border-top-right-radius: 0;
+/*	border-top-left-radius: 0;
+	border-top-right-radius: 0; */
 }
 .cat_bar + .title_bar {
 	margin-top: 0;
@@ -3900,9 +3953,8 @@ h3.catbg .main_icons::before, h3.catbg .icon {
 	margin: 10px 0 0 0;
 	padding: 12px 16px;
 	background: #f5f5f5;
-	border: 1px solid #c5c5c5;
-	border-radius: 7px;
-	box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.1);
+	border: 2px solid #0d6700;
+	border-radius: 6px;
 	overflow: auto;
 }
 /* TitleBar & SubBar */
@@ -3919,30 +3971,29 @@ h3.catbg .main_icons::before, h3.catbg .icon {
 	clear: both;
 }
 h4.titlebg, h3.subbg, h4.subbg, .subbg {
-	border: 2px solid #67d1ff;
 	border-radius: 6px;
-	box-shadow: 0px 0px 0px 2px #116ba1;
-	background: linear-gradient(to bottom, #3DA6EB 0%, #0B65A1 100%);
+	background: linear-gradient(to bottom, #7D1E02 0%, #C22D01 100%);
 	color: #fff;
 	font-family: "Tahoma", sans-serif;
 	font-weight: bold;
 	overflow: hidden;
 	padding: 3px 12px 3px 12px;
 	text-shadow: none;
-	margin: 2px 2px 5px 2px;
+	height: 25px;
+	padding-top: 4px;
 }
 h3.titlebg {
 /*	border-top: 1px solid #10689d;
 	border-bottom: 1px solid #2b94d8;
 	border-left: none;
 	border-right: none;
-	box-shadow: 0 0 0 1px #137abb, 0 0 0 1px #137abb;
-	background: linear-gradient(to bottom, #2890d4 10%, #10689d 90%); */
+	box-shadow: 0 0 0 1px #137abb, 0 0 0 1px #137abb; */
+	background: linear-gradient(to bottom, #7D1E02 0%, #C22D01 100%);
 	color: #fff;
 	font-family: "Tahoma", sans-serif;
 	font-weight: bold;
 	overflow: hidden;
-	padding: 6px 12px 5px 12px;
+	padding: 6px 12px 0 12px;
 	text-shadow: none;
 	margin: 0 -3px 0 -3px;
 }
@@ -3961,7 +4012,7 @@ h3.titlebg {
 	text-decoration: none;
 }
 #info_center .titlebg a {
-	color: #346
+	color: #fff;
 }
 .title_bar + .windowbg, .title_bar + .roundframe {
 	margin-top: -1px;
@@ -3972,10 +4023,10 @@ h3.titlebg {
 /* Other */
 /* Information */
 .information {
-	background: #f5f5f0;
+	background: linear-gradient(to bottom, #fff 0%, #f1f3f5 95%);
 	overflow: auto;
 	padding-bottom: .5em;
-	border: 1px solid #cdd5db;
+	border: 2px solid #0d6700;
 	border-radius: 4px;
 	margin: 0 0 10px 0;
 	padding: 6px 9px 8px 9px;
@@ -3995,7 +4046,7 @@ p.information img {
 }
 #topic_icons .information,
 #messageindex .information {
-	border-top: 1px solid #ddd;
+/*	border-top: 1px solid #ddd; */
 }
 .topic_pages {
 	font-size: 0.75em;
@@ -4124,14 +4175,15 @@ h3.profile_hd::before,
 /* Those classes are sharing exact same gradient. */
 /* Background of buttons */
 .dropmenu li li:hover, .dropmenu li li:hover > a, .dropmenu li li a:focus, .dropmenu li li a:hover {
-	background: #126bf1;
+	background: #C22D01;
 	color: #fff;
 }
 .quickbuttons > li, .quickbuttons li ul {
 	background: #fff; /* fallback for some browsers */
+/*	border: 1px solid #0D6700; */
 }
 .quickbuttons li ul li a:hover, .quickbuttons ul li a:focus {
-	background: #5b7fb1; /* fallback for some browsers */
+	background: linear-gradient(to bottom, #629f2f 0, #234221 50%); /* fallback for some browsers */
 	color: #fff;
 }
 .inline_mod_check {
@@ -4175,8 +4227,6 @@ h3.profile_hd::before,
 }
 .notify_dropdown span {
 	font-size: 0.9em;
-	display: block;
-	max-width: 500px;
 }
 
 /* Some new stuff */
@@ -4189,6 +4239,7 @@ h3.profile_hd::before,
 }
 #display_head span {
 	margin: -4px 0 0 0;
+	color: #c22d01;
 }
 .display_title {
 	font-weight: bold;
@@ -4349,7 +4400,7 @@ input[name="attachBBC"] {
 .information.noup {
 	border-radius: 0;
 	margin: 0 !important;
-	border-bottom: none;
+/*	border-bottom: none; */
 }
 .windowbg.noup {
 	box-shadow: none;
@@ -4374,6 +4425,7 @@ tr[id^='list_news_lists_'] textarea {
 	width: 100%;
 	resize: vertical;
 	min-height: 100px;
+	border: 1px solid #0d6700;
 }
 
 /* Responsive Youtube embed */
@@ -4435,16 +4487,16 @@ img.theme_thumbnail {
 }
 /* Create equal columns that floats next to each other */
 .column {
-  float: right;
-  width: 30%;
+	float: right;
+	width: 30%;
 /*  padding: none; */
 }
 
 /* Clear floats after the columns */
 .row:after {
-  content: "";
-  display: table;
-  clear: both;
+	content: "";
+	display: table;
+	clear: both;
 }
 
 /* For the Packages Permissions th */
